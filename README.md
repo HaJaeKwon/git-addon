@@ -1,5 +1,13 @@
 # golang 으로 개발해보는 git command helper
 
+### Git user.name, user.email 설정 변경
+* 환경변수 추가
+  * GIT_NAME_naver=jaekwon.ha
+  * GIT_EMAIL_naver=hazxz@naver.com
+* make user
+* cp bin/gituser /usr/local/bin/gituser
+* gituser naver 
+
 ### stash 수행 후에 checkout, pull
 
 * init
