@@ -17,6 +17,7 @@ git config --replace-all user.email ${GIT_EMAIL_ha}
 
 var CONFIG = "config"
 var SET = "--replace-all"
+var GET = "--get"
 var USER_NAME = "user.name"
 var USER_EMAIL = "user.email"
 var ENV_PREFIX_NAME = "GIT_NAME_"
@@ -54,4 +55,12 @@ func main() {
 		fmt.Println(string(stdout.Bytes()), string(stderr.Bytes()))
 		panic("[GIT_ADDON] 'git config --replace-all user.email' fail")
 	}
+
+	cmd = exec.Command(gitExecutable, CONFIG, GET, USER_NAME)
+	nameOutput, _ := cmd.Output()
+	fmt.Print(USER_NAME + ": " + string(nameOutput))
+
+	cmd = exec.Command(gitExecutable, CONFIG, GET, USER_EMAIL)
+	emailOutput, _ := cmd.Output()
+	fmt.Print(USER_EMAIL + ": " + string(emailOutput))
 }
