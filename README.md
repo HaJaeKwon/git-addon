@@ -1,15 +1,17 @@
-# golang 으로 개발해보는 git command helper
+# golang 으로 개발해보는 git addon
 
-### Git user.name, user.email 설정 변경
+## 1. git user.name, user.email 설정 변경
+* 미리 환경변수에 사용할 user.name, user.email 정보를 등록해두고 user 정보를 간단하게 스위치해주는 기능을 제공
 * 환경변수 추가
-  * GIT_NAME_naver=jaekwon.ha
-  * GIT_EMAIL_naver=hazxz@naver.com
-* make user
-* cp bin/gituser /usr/local/bin/gituser
-* gituser naver 
+  * GIT_NAME_{domain} / GIT_EMAIL_{domain} 환경변수를 추가
+  * GIT_NAME_google=JaekwonHa
+  * GIT_EMAIL_google=hazxz1116@gmail.com
+* build 후 binary 경로 등록
+  * make user
+  * cp bin/gituser /usr/local/bin/gituser
+  * gituser google
 
-### stash 수행 후에 checkout, pull
-
+## 2. stash 수행 후에 checkout, pull
 * init
   * only stash, pull
 * init -d
@@ -25,15 +27,5 @@ init -> stash, checkout, pull
 4. checkout 수행
 5. pull 수행
 
-### Merge Commit 에서 사용할 Commit log 생성기
-
+## 3. Merge Commit 에서 사용할 Commit log 생성기
 * git log format pretty 자기 브런치꺼 까지만
-
-### checkout 단축키, 없으면 자동으로 -b
-
-co add-schdule -f
-co add-schdule -h
-co add-schedule
-
-feature/
-hotfix/
